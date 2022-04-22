@@ -169,18 +169,18 @@
 		light.castShadow = true;
 		scene.add(light);
 
-		setTimeout(()=>{
-				// var loader = new OBJLoader();
-				var loader = new THREE.OBJLoader();
-				console.log(loader,'=====loader')
-				loader.load('./data/data/long.obj', function (obj) {
-					obj.children[0].material.color.set('#0a236a')
-					// obj.position.x = 5;
-					// obj.position.y = 1;
-					scene.add(obj); // 将模型引入three
-					renderer.render(scene, camera);
-				})
-		},1500)
+		// setTimeout(()=>{
+		// 		// var loader = new OBJLoader();
+		// 		var loader = new THREE.OBJLoader();
+		// 		console.log(loader,'=====loader')
+		// 		loader.load('./data/data/long.obj', function (obj) {
+		// 			obj.children[0].material.color.set('#0a236a')
+		// 			// obj.position.x = 5;
+		// 			// obj.position.y = 1;
+		// 			scene.add(obj); // 将模型引入three
+		// 			renderer.render(scene, camera);
+		// 		})
+		// },1500)
 				
 
 		var planeGeometry = new THREE.PlaneGeometry(100, 60, 10, 10);
@@ -195,15 +195,15 @@
 		plane.receiveShadow = true;
 
 		// add a torus knot
-		// var geometry = new THREE.BoxGeometry(1, 1, 1);
-		// var material = new THREE.MeshNormalMaterial({
-		// 	transparent: true,
-		// 	opacity: 0.5,
-		// 	side: THREE.DoubleSide
-		// });
-		// var mesh = new THREE.Mesh(geometry, material);
-		// mesh.position.y = geometry.parameters.height / 2
-		// scene.add(mesh);
+		var geometry = new THREE.BoxGeometry(1, 1, 1);
+		var material = new THREE.MeshNormalMaterial({
+			transparent: true,
+			opacity: 0.5,
+			side: THREE.DoubleSide
+		});
+		var mesh = new THREE.Mesh(geometry, material);
+		mesh.position.y = geometry.parameters.height / 2
+		scene.add(mesh);
 
 		var geometry = new THREE.TorusKnotGeometry(0.3, 0.1, 64, 16);
 		var material = new THREE.MeshNormalMaterial();
