@@ -169,6 +169,7 @@
 		light.castShadow = true;
 		scene.add(light);
 
+		setTimeout(()=>{
 				// var loader = new OBJLoader();
 				var loader = new THREE.OBJLoader();
 				console.log(loader,'=====loader')
@@ -179,6 +180,8 @@
 					scene.add(obj); // 将模型引入three
 					renderer.render(scene, camera);
 				})
+		},1500)
+				
 
 		var planeGeometry = new THREE.PlaneGeometry(100, 60, 10, 10);
 		var planeMaterial = new THREE.ShadowMaterial();
